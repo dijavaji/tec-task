@@ -1,18 +1,17 @@
+const taskController = require("../controllers/task.controller");
+
 const resolvers = {
   Query: {
-    books: () => books,
+    getTasks: (_, {id }) => taskController.getTasks(id),
+  },
+  Mutation: {
+    //Tareas
+    createTask: (_, { input }) => {
+      return taskController.createTask(input);
+    },
+    //login: (_,{input}) => userController.login(input),
+    //updateAvatar: (_,{file})=> userController.updateAvatar(file),
   },
 };
-
-const books = [
-  {
-    title: 'The Awakening',
-    author: 'Kate Chopin',
-  },
-  {
-    title: 'City of Glass',
-    author: 'Paul Auster',
-  },
-];
 
 module.exports = resolvers;
