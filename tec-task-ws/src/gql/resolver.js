@@ -9,8 +9,7 @@ const resolvers = {
     createTask: (_, { input }) => {
       return taskController.createTask(input);
     },
-    //login: (_,{input}) => userController.login(input),
-    //updateAvatar: (_,{file})=> userController.updateAvatar(file),
+    updateTask: (_,{_id, input}) => taskController.updateTask(_id, input),
   },
 };
 

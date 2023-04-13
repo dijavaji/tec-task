@@ -16,6 +16,8 @@ const typeDefs = gql`
     repeat: String
     complete: Boolean!
     createAt: String
+    modifiedBy: String
+    modifiedDate: String
   }
   input TaskInput {
     name: String!
@@ -23,6 +25,18 @@ const typeDefs = gql`
     complete: Boolean!
     createdBy: String!
     createAt: String
+  }
+  input TaskUpdate{
+    name: String!
+    description: String
+    limitDate: String
+    startTime: String
+    finishTime: String
+    remind: String
+    repeat: String
+    complete: Boolean!
+    modifiedBy: String!
+    modifiedDate: String!
   }
 
   # The "Query" type is special: it lists all of the available queries that
@@ -33,8 +47,8 @@ const typeDefs = gql`
   type Mutation {
     #Tareas
     createTask(input: TaskInput): Task,
-    updateTask(_id: String, input: TaskInput): Task,
-    deleteTask(_id: String): Task
+    updateTask(_id: String, input: TaskUpdate): Task,
+    deleteTask(_id: String): String
   }
 `;
 
