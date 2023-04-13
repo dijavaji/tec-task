@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+"# tec-task"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Technical Interview Proposal
+
+This is my solution for To-do app: React code challenge Here's an overview of the application structure:
+
+## Problem Description
+The goal of this challenge is to create a simple To-Do mobile app in React. You can use NextJs or create-react-app to develop the frontend of this app.
+
+The API must be developed with NodeJs, GraphQL and must allow the CRUD to a SQLite base or other similar To-Do ones.
+
+dashboard screen
+
+In this screen the user can see and manage all the tasks that were created, as well as select them as “complete”. Tasks appear in order of "creation" sorted from latest to earliest. Also, if the user goes to the "Completed Tab", the user can mark the task as "incomplete", if the user goes to Incomplete he will see all the incomplete tasks. When the user taps "Add a task", the app navigates to "Add tasks". The application must be connected to the API to allow its data persistence.
+
+The Favorites, Search, Alert, Burger Menu tab is not required for the scope of this test, we only need the UI for those features.
+
+API
+
+It must allow the CRUD of TO-DOs and have the following Queries and Mutations: getTodos, createTodo, updateTodo, deleteTodo.
+
+## Solution Overview
+For development used the following technologies.
+Development Ide
+Atom
+Apollo Client
+Postman
+Source control
+• GIT
+Database
+• MongoDB
+Backend
+•Nodejs
+•GraphQL
+Frontend
+Reactjs
+Methodology
+• Scrum
+
+
+The tec-task solution contains a two project:
+tec-task-app
+Is the frontend project this project contains efficient and sophisticated single-page apps
+
+tec-task-ws
+Is the backend project this project contains all the classes which are used to manipulate the logic business of application, necessary data model and components the graphQl-api type.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory tec-task-ws , you can run:
 
-### `npm start`
+## Development server
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+### `npm run start`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It correctly bundles package in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run dev`
+Run Nodejs applications Navigate to `http://127.0.0.1:4000/`. You have the nexts apis built for creating, retrieving, updating, deleting and searching tasks.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+In the project directory tec-task-app , you can run:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Development server
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run `npm run start` for a dev server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
