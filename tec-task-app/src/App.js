@@ -8,6 +8,7 @@ import Header from './components/ui/Header';
 import AddTaskComponent from './components/AddTaskComponent';
 import TasksListComponent from './components/TasksListComponent';
 import TaskComponent from './components/TaskComponent';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function RoutesSwitch() {
           <Routes>
             <Route path="/" element={<div>home</div>} />
             <Route path="/tasks" element={<TasksListComponent/>} />
-            <Route path="/add" element={<AddTaskComponent/>} />
+            <Route path="/addTask" element={<AddTaskComponent/>} />
             <Route path="/tasks/:id" element={<TaskComponent/>} />
           </Routes>
     </div>

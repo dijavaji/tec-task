@@ -13,7 +13,7 @@ async function createTask(input){
 }
 
 async function getTasks(id){
-  console.log("obteniendo tarea",id);
+  //console.log("obteniendo tarea",id);
   let tasks = null;
   try{
     if(id) tasks = await Task.findById(id);

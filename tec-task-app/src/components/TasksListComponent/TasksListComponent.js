@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useQuery} from "@apollo/client";
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
 
 import {GET_TASKS} from "../../services/TaskService";
 
@@ -48,6 +49,11 @@ const TasksListComponent = () => {
                 </li>
               ))}
           </ul>
+          <button className="m-3 btn btn-success">
+          <Link to={"/addTask"} className="nav-link">
+            Agregar tarea
+          </Link>
+          </button>
         </div>
 
         <div className="col-md-6">
