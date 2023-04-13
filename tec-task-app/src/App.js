@@ -1,6 +1,9 @@
 import { BrowserRouter,Routes, Route, } from "react-router-dom";
+//agrego cliente de gql
+import {ApolloProvider} from "@apollo/client";
+
 import './App.css';
-import { Button } from 'reactstrap';
+import client from "./config/apollo";
 import Header from './components/ui/Header';
 import AddTaskComponent from './components/AddTaskComponent';
 import TasksListComponent from './components/TasksListComponent';
@@ -8,12 +11,12 @@ import TaskComponent from './components/TaskComponent';
 
 function App() {
   return (
-    <>
+    <ApolloProvider client={client}>
       <BrowserRouter>
         <Header/>
         <RoutesSwitch/>
       </BrowserRouter>
-    </>
+    </ApolloProvider>
   );
 }
 

@@ -17,7 +17,7 @@ async function getTasks(id){
   let tasks = null;
   try{
     if(id) tasks = await Task.findById(id);
-    tasks = await Task.find({});
+    tasks = await Task.find({}).sort({ createAt: -1 });
     if(!tasks) throw new Error("La tarea no existe");
   }catch(ex){
     console.log(ex);

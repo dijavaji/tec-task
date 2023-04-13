@@ -29,6 +29,7 @@ query getTasks {
     repeat
     complete
     createAt
+    name
   }
 }
 `;
