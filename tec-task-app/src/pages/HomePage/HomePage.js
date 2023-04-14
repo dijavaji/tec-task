@@ -6,14 +6,21 @@ import {GET_TASKS} from "../../services/TaskService";
 import TasksListComponent from '../../components/TasksListComponent';
 
 const HomePage = () => {
-  const [activeTab, setActiveTab] = useState("1");
-  const toggle = tab => {
-    if (activeTab !== tab) setActiveTab(tab);
-  };
   //consulto las tareas
   const { data, loading, startPolling, stopPolling } = useQuery(
     GET_TASKS
   );
+  const [activeTab, setActiveTab] = useState("1");
+  const [activeTask, setActiveTask] = useState([]);
+  const [inactiveTask, setInactiveTask] = useState([]);
+  const toggle = tab => {
+    if (activeTab !== tab) setActiveTab(tab);
+    const { getTasks } = data;
+    const tasksActive = getTasks.filter(task => task.complete === true);
+    const tasksInactive = getTasks.filter(task => task.complete === false);
+    setActiveTask(tasksActive);
+    setInactiveTask(tasksInactive);
+  };
 
   useEffect(() => {
     startPolling(1000);
@@ -55,18 +62,14 @@ const HomePage = () => {
    <TabPane tabId="2">
    <Row>
      <Col sm="12">
-       <h4>
-         Tab 2 Contents
-       </h4>
+       <TasksListComponent tasks={activeTask}/>
      </Col>
    </Row>
    </TabPane>
    <TabPane tabId="3">
    <Row>
      <Col sm="12">
-       <h4>
-         Tab 3 Contents
-       </h4>
+         <TasksListComponent tasks={inactiveTask}/>
      </Col>
    </Row>
    </TabPane>
