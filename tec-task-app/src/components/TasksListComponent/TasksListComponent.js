@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
-
+import {Input, FormGroup} from 'reactstrap';
 
 
 const TasksListComponent = (props) => {
   const {tasks} = props;
   const [currentTask, setCurrentTask] = useState();
   const [currentIndex, setCurrentIndex] = useState();
+  const [state, setState] = useState(true);
 
   const setActiveTutorial= (tutorial, index) =>{
     setCurrentTask(tutorial);
@@ -23,13 +24,15 @@ const TasksListComponent = (props) => {
           <ul className="list-group">
             {tasks &&
               tasks.map((task, index) => (
-                <li
-                  className={
-                    "list-group-item " +
-                    (index === currentIndex ? "active" : "")
-                  }
+                <li className={ "list-group-item " + (index === currentIndex ? "active" : "") }
                   onClick={() => setActiveTutorial(task, index)} key={index}>
-                  {task.name}
+                  <span>
+                    <FormGroup switch disabled>
+                      <Input type="switch" disabled  checked={task.complete} onClick={() => { setState(!state);}} />
+                      {task.name}
+                    </FormGroup>
+                  </span>
+
                 </li>
               ))}
           </ul>
