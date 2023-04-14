@@ -78,8 +78,9 @@ const TasksListComponent = () => {
                 </label>{" "}
                 {currentTask.complete ? "Completada" : "Pendiente"}
               </div>
-
-              <Link to={"/tutorials/" + currentTask.id} className="badge badge-warning" > Editar </Link>
+              <button type="button" className="m-1 btn btn-primary">
+                <Link to={"/tasks/" + currentTask.id} className="nav-link" > Editar </Link>
+              </button>
             </div>
           ) : (
             <div>
