@@ -1,28 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {useQuery} from "@apollo/client";
 import { Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.css';
 
-import {GET_TASKS} from "../../services/TaskService";
 
-const TasksListComponent = () => {
-  const [taskSelect, setTaskSelect] = useState(null);
+
+const TasksListComponent = (props) => {
+  const {tasks} = props;
   const [currentTask, setCurrentTask] = useState();
   const [currentIndex, setCurrentIndex] = useState();
-  //consulto las tareas
-  const { data, loading, startPolling, stopPolling } = useQuery(
-    GET_TASKS
-  );
-
-  useEffect(() => {
-    startPolling(1000);
-    return () => {
-      stopPolling();
-    };
-  }, [startPolling, stopPolling]);
-
-  if (loading) return null;
-  const { getTasks } = data;
 
   const setActiveTutorial= (tutorial, index) =>{
     setCurrentTask(tutorial);
@@ -37,8 +21,8 @@ const TasksListComponent = () => {
           <h4>Lista de Tareas</h4>
 
           <ul className="list-group">
-            {getTasks &&
-              getTasks.map((task, index) => (
+            {tasks &&
+              tasks.map((task, index) => (
                 <li
                   className={
                     "list-group-item " +
