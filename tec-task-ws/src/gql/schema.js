@@ -42,7 +42,7 @@ const typeDefs = gql`
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each. In this
   type Query {
-    getTasks: [Task]
+    getTasks(_id:ID): [Task]
   }
   type Mutation {
     #Tareas

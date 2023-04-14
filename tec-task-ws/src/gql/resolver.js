@@ -2,7 +2,7 @@ const taskController = require("../controllers/task.controller");
 
 const resolvers = {
   Query: {
-    getTasks: (_, ) => taskController.getTasks(null),
+    getTasks: (_,{_id}) => taskController.getTasks(_id),
   },
   Mutation: {
     //Tareas

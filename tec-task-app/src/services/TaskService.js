@@ -18,8 +18,8 @@ mutation createTask($input: TaskInput) {
 `;
 
 export const GET_TASKS = gql`
-query getTasks {
-  getTasks {
+query getTasks($id: ID) {
+  getTasks(_id: $id) {
     id
     description
     limitDate

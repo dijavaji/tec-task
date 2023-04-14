@@ -13,12 +13,12 @@ async function createTask(input){
 }
 
 async function getTasks(id){
-  //console.log("obteniendo tarea",id);
-  let tasks = null;
+  console.log("obteniendo tarea",id);
+  let tasks = [];
   try{
-    if(id) tasks = await Task.findById(id);
-    tasks = await Task.find({}).sort({ createAt: -1 });
-    if(!tasks) throw new Error("La tarea no existe");
+    if(id) tasks.push(await Task.findById(id));
+    if(tasks.length === 0) tasks = await Task.find({}).sort({ createAt: -1 });
+    if(!tasks[0]) throw new Error("La tarea no existe");
   }catch(ex){
     console.log(ex);
   }
