@@ -16,12 +16,10 @@ const TaskSchema = Schema({
     default: Date.now(),
   },
   startTime: {
-    type: Date,
-    default: Date.now(),
+    type: String,
   },
   finishTime: {
-    type: Date,
-    default: Date.now(),
+    type: String,
   },
   remind: {
     type: String,

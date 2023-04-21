@@ -8,7 +8,7 @@ import client from "./config/apollo";
 import Header from './components/ui/Header';
 import AddTaskComponent from './components/AddTaskComponent';
 
-import TaskComponent from './components/TaskComponent';
+import EditTaskComponent from './components/EditTaskComponent';
 import HomePage from './pages/HomePage';
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'react-toastify/dist/ReactToastify.css';
@@ -32,7 +32,7 @@ function RoutesSwitch() {
           <Routes>
             <Route path="/" element={<HomePage/>} />
             <Route path="/addTask" element={<AddTaskComponent/>} />
-            <Route path="/tasks/:id" element={<TaskComponent/>} />
+            <Route path="/tasks/:id" element={<EditTaskComponent/>} />
           </Routes>
     </div>
   );

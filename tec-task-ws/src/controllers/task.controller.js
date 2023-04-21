@@ -8,7 +8,8 @@ async function createTask(input){
     task.save();
     return task;
   } catch (error) {
-    console.log(error);
+    console.log("Error al crear tarea", error);
+    throw new Error("Error al crear tarea");
   }
 }
 
@@ -20,21 +21,33 @@ async function getTasks(id){
     if(tasks.length === 0) tasks = await Task.find({}).sort({ createAt: -1 });
     if(!tasks[0]) throw new Error("La tarea no existe");
   }catch(ex){
-    console.log(ex);
+    console.log("Error al obtener tarea", ex);
+    throw new Error("Error al obtener tarea");
   }
   return tasks;
 }
 
 async function updateTask(id, input){
-  console.log("actualizando tarea");
+  console.log("actualizando tarea",id);
+  console.log(input);
   try{
-    let task = Task.findByIdAndUpdate(id, input, { useFindAndModify: false });
-
-    return input;
+    result = Task.findByIdAndUpdate(id, input, { useFindAndModify: true });
+    return result;
   }catch(ex){
     console.error("Error en la actualizacion de tarea ",ex);
     throw new Error("Error en la actualizacion de tarea");
   }
 }
 
-module.exports = {createTask, getTasks, updateTask};
+async function deleteTask(id){
+  try {
+    console.log("eliminando tarea");
+    const deletedTask = await Task.findByIdAndDelete(id);
+    return `Task ${deletedTask.id} delete Successfully`;
+    } catch (error) {
+      console.error("Error al eliminar la tarea ",error);
+      throw error
+  }
+}
+
+module.exports = {createTask, getTasks, updateTask, deleteTask};

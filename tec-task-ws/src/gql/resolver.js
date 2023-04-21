@@ -10,6 +10,7 @@ const resolvers = {
       return taskController.createTask(input);
     },
     updateTask: (_,{_id, input}) => taskController.updateTask(_id, input),
+    deleteTask: async (_,{_id}) => taskController.deleteTask(_id),
   },
 };
 

@@ -21,7 +21,7 @@ export default function AddTaskComponent(props) {
                 name: newTask.title,
                 limitDate: newTask.deadline,
                 complete: false,
-                createdBy:"web-user"
+                createdBy:"web-app"
               }
             }
           });

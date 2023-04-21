@@ -33,11 +33,22 @@ query getTasks($id: ID) {
   }
 }
 `;
+
 export const UPDATE_TASK = gql`
-mutation updateAvatar($file: Upload){
-  updateAvatar(file: $file){
-    status,
-    urlAvatar
+mutation updateTask($id:String!, $input: TaskUpdate!) {
+  updateTask(_id: $id, input: $input) {
+    id
+    name
+    description
+    limitDate
+    startTime
+    finishTime
+    remind
+    repeat
+    complete
+    createAt
+    modifiedBy
+    modifiedDate
   }
 }
 `;
