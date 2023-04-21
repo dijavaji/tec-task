@@ -69,6 +69,9 @@ const TaskComponent = (props) => {
             <option value="4">Anual</option>
           </Input>
         </FormGroup>
+        <FormGroup switch>
+          <Input type="switch" checked={formik.values.complete} {...formik.getFieldProps('complete')} />
+        </FormGroup>
 
         <Button type="submit" className="m-1 btn btn-success">
           {task? "Actualizar":"Crear tarea"}
@@ -97,6 +100,7 @@ function initialValues(task){
       finishTime: !task ? '' : task.finishTime,
       remind: !task ? '' : task.remind,
       repeat: !task ? '' : task.repeat,
+      complete: !task ? false : task.complete,
     }
   );
 }

@@ -31,7 +31,7 @@ function EditTaskComponent() {
              limitDate: task.deadline,
              startTime: task.startTime,
              finishTime: task.finishTime,
-             complete: false,
+             complete: task.complete,
              remind:task.remind,
              repeat:task.repeat,
              modifiedBy:"web-app",
